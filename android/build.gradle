@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile "com.facebook.react:react-native:+"
+    releaseCompile 'com.inlight.lighthouse:lighthouse-release@aar'
+    debugCompile 'com.inlight.lighthouse:lighthouse-debug@aar'
+    compile 'com.mcxiaoke.volley:library:1.0.+@aar'
+    compile 'org.altbeacon:android-beacon-library:2.1.3'
+}

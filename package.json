@@ -1,0 +1,17 @@
+{
+  "name": "react-native-lighthouse",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulbao/react-native-lighthouse.git"
+  },
+  "nativePackage": true,
+  "description": "Lighthouse SDKs for React Native",
+  "author": "PaulBao <paul@inlight.com.au>",
+  "homepage": "https://github.com/paulbao/react-native-lighthouse",
+  "keywords": [
+    "react-component",
+    "react-native",
+    "lighthouse"
+  ]
+}
