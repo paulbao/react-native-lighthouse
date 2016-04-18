@@ -110,3 +110,33 @@ public class ContentProviderAuthority {
 * GCM API KEY
 
    By following [Cloud messaging](https://developers.google.com/cloud-messaging/android/client), you can get `google-services.json` file and place it in android/app directory
+   
+### Manual installation iOS
+
+* Drag `node_modules/react-native-lighthouse/ios/LighthouseSDKs.xcodeproj` to your project on Xcode (usually under the Libraries group on Xcode)
+
+* Drag `node_modules/react-native-lighthouse/ios/LighthouseSDKs/lighthouseRelease/libLighthouse.a` to your project on Xcode
+
+* Click on your main project file (the one that represents the .xcodeproj) select Build Phases and drag the static library(libLighthouseSKDs.a) from the Products folder inside the Library you are importing to Link Binary With Libraries
+
+* Add below code to your Info.plist file
+
+```
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+		<string>bluetooth-central</string>
+	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string></string>
+```
+
+* Add the following to your `Header Search Paths` and set the search to `recursive`
+    `$(SRCROOT)/../node_modules/react-native-lighthouse`
+
+* Add the following to your `Library Search Paths` for Debug and Release version
+`$(SRCROOT)/../node_modules/react-native-lighthouse/ios/LighthouseSDKs/lighthouseDebug`     //Debug
+
+`$(SRCROOT)/../node_modules/react-native-lighthouse/ios/LighthouseSDKs/lighthouseRelease`   //Release
